@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID DIGITAL</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            position: relative;
+        }
+        .container {
+            position: relative;
+        }
+        .imagem-principal {
+            max-width: 500px;
+        }
+        .qrcode-pequeno {
+            position: absolute;
+            bottom: 10px;
+            top: 970px;
+            right: 55px;
+            width: 35px;
+            height: auto;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .qrcode-expandido {
+            width: 350px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 20;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .fechar {
+            position: absolute;
+            top: 85%;
+            left: 47%;
+            background-color: rgba(253, 252, 252, 0);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .imagem-expandida {
+            max-width: 105%;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img class="imagem-principal" src="ID UFU.png" alt="Imagem principal">
+        <img id="qrcode" class="qrcode-pequeno" src="qr code.jpeg" alt="QR Code" onclick="expandirQR()">
+    </div>
+
+    <div id="qr-expandido" class="qrcode-expandido" style="display:none;">
+        <button class="fechar" onclick="fecharQR()"></button>
+        <img class="imagem-expandida" src="ID UFU (2).png" alt="QR Code Expandido">
+    </div>
+
+    <script>
+        function expandirQR() {
+            document.getElementById("qrcode").style.display = 'none';
+            document.getElementById("qr-expandido").style.display = 'block';
+        }
+
+        function fecharQR() {
+            document.getElementById("qrcode").style.display = 'block';
+            document.getElementById("qr-expandido").style.display = 'none';
+        }
+    </script>
+</body>
+</html>
